@@ -1,0 +1,62 @@
+# Regex - Matching an Hex Value
+In this tutorial we will breakdown the an hex value regex and look at the meaning behind the characters that compromise the regex hex value.
+## Summary
+This regex is designed to match a hexadecimal color code. We will go in depth what each portion of this regex below means as a regex for matching hexadecimal color values typically checks for a string that may start with an optional # followed by exactly 6 or 3 hexadecimal digits.  
+```
+/^#?([a-f0-9]{6}|[a-f0-9]{3})$/
+```
+
+## Table of Contents
+
+- [Anchors](#anchors)
+- [Quantifiers](#quantifiers)
+- [Grouping Constructs](#grouping-constructs)
+- [Bracket Expressions](#bracket-expressions)
+- [Character Classes](#character-classes)
+- [The OR Operator](#the-or-operator)
+- [Flags](#flags)
+- [Character Escapes](#character-escapes)
+
+## Regex Components
+
+### Anchors
+* The anchors in this regex would be `^` in which it asserts the position at the start of the string.
+* Another anchor would `$`in which it asster the position at the end of the string. 
+
+### Quantifiers
+Quantifiers are special characters or sequences that specify how many times the preceding element must be present in the input for a match to be found. In this case the below are considered quantifiers: 
+* `?`: Matches 0 or 1 occurrence of the preceding element (making the # optional)
+* `{6}`: Matches exactly 6 occurences of the preceding element 
+* `{3}`: Matches exactly 3 occurence of the preceeding element
+
+### Grouping Constructs
+Grouping constructs in regex are used to group multiple elements together so they can be treated as a single unit. They are usually constructed by using `(...)` parantheses. In this regex the below is a grouping constructor: 
+* `(...)`: Here, `([a-f0-9]{6}|[a-f0-9]{3})` groups the two possible formats for the hexadecimal digits.
+
+### Bracket Expressions
+Bracket expressions, also known as character classes, are used in regular expressions to match any one character from a set of characters. They are defined using square brackets `[]`. In this regex the below is a bracket expression: 
+* `[a-f0-9]`: Matches any single character that is a lowercase letter from a to f or a digit from 0 to 9.
+
+### Character Classes
+As explained above brakcet expression are also know as character classes, they are a way to match one character from a set of characters. Example below: 
+* `[a-f0-9]`: This bracket expression functions as a character class, matching any one character in the specified range.
+### The OR Operator
+OR operators in regex are used to match one pattern to another. The primary OR operator is the pipe symbol `|`. It allows for alternatives within the pattern, meaning it will match the pattern on either side of the `|`.
+
+* `|`: Inside the group, `|` acts as an OR operator, allowing the regex to match either [a-f0-9]{6} or [a-f0-9]{3}.
+
+### Flags
+Flags are optional parameters that modify how a regular expression pattern is processed. They are typically appended after the closing slash `/` that ends the regex pattern and can change how the pattern matching behaves. 
+
+* No flags are used in this regex.
+
+### Character Escapes
+Character escapes in regex are sequences of characters that have special meanings and are represented by an escape sequence starting with a backslash `\`.
+
+* There are no character escapes in this regex.
+## Author
+
+My name is Thannia Hernandez but I go by Tati. I am beginner in software development attending North Western Boot Camp for front and back end web development. To view more of my projects you can follow the link my GitHub profile.
+
+*  <a href="https://github.com/thernand09/17-CS-Regex">GitHub Repository</a>
+
